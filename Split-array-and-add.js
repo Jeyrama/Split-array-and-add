@@ -39,3 +39,14 @@ Result: [10, 18]
 
 
 // Solution
+
+const splitAndAdd = (arr, n) => {
+  while (n-- > 0) {
+    if (arr.length % 2 != 0) arr.unshift(0);
+    let mid = Math.floor(arr.length / 2);
+    const arr1 = arr.slice(0, mid);
+    const arr2 = arr.slice(mid);
+    arr = arr1.map((el, i) => el + arr2[i]);
+  }
+  return arr;
+};
