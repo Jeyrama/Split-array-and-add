@@ -50,3 +50,5 @@ const splitAndAdd = (arr, n) => {
   }
   return arr;
 };
+
+// or
