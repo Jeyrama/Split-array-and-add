@@ -52,3 +52,16 @@ const splitAndAdd = (arr, n) => {
 };
 
 // or
+
+function splitAndAdd(arr, n) {
+  if (arr.length <= 1 || !n)
+    return arr;
+  const rem = arr.length % 2;
+  const mid = (arr.length - rem) / 2;
+  let next = arr.slice(mid);
+  
+  for (let i = 0; i < mid; i++)
+    next[rem + i] += arr[i];
+
+  return splitAndAdd(next, n - 1);
+}
